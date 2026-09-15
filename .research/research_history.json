@@ -145,6 +145,38 @@
             "gpu_count": 0,
             "os": "Linux"
           }
+        },
+        "experimental_results": {
+          "metrics_data": {
+            "gauss-sum": {
+              "verdict": "supported",
+              "statement_matches": true,
+              "axioms": [
+                "Classical.choice",
+                "Quot.sound",
+                "propext"
+              ],
+              "errors": []
+            },
+            "odd-sum": {
+              "verdict": "supported",
+              "statement_matches": true,
+              "axioms": [
+                "Classical.choice",
+                "Quot.sound",
+                "propext"
+              ],
+              "errors": []
+            }
+          },
+          "stdout": "GitHub Actions runs 34941959631 (gauss-sum) and 34941963311 (odd-sum), both at commit a420df7d, Docker path (elan + leanprover/lean4:v4.33.1, mathlib 0df444a3). lake build succeeded; lake exe airas-report wrote lean.json with no errors and no warnings, statement_matches true for both."
+        },
+        "experimental_analysis": {
+          "analysis_report": "再走（auto-res2/lean-summation-identities-2 の修正反映版）。2 つの Lean claim はどちらも full stage で sorry 無しにビルドされ、update_record は c1・c2 を verified=true、verdict=supported と導いた。今回は record の statement を意図的に Lean の印字形式と違う綴り（C1 は矢印束縛子と Finset.sum + λ、C2 は括弧なしの束縛子）で凍結したが、report ツールの項比較（statement_matches）は両方 true を返した。文字列比較では不一致になっていた綴りである。依存公理は前回と同じ {propext, Classical.choice, Quot.sound} で allowed_axioms の範囲内。運用面: 前回落ちた点はすべて解消した。Docker build は uv.lock 同期済みで一発で通り、prereg 論文はロゴ回避なしで CI が build し、rationale の生の `_` は claims.tex のエスケープで通り、paper gate は GitHub Actions の provenance を照合して green だった。新規リポジトリは template の main だけから生成され、Pages の配信元は Actions に設定された。"
+        },
+        "decision": {
+          "action": "complete",
+          "reasoning": "両 claim が supported。修正の検証も完了。"
         }
       }
     ]
