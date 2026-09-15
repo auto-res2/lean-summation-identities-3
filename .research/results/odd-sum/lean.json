@@ -1,0 +1,11 @@
+{"warnings": [],
+ "toolchain": "leanprover/lean4:v4.33.1",
+ "statement_matches": true,
+ "statement": "∀ (n : ℕ), ∑ i ∈ Finset.range n, (2 * i + 1) = n ^ 2",
+ "module": "Airas.OddSum",
+ "mode": "full",
+ "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+ "errors": [],
+ "decl": "odd_sum_eq_sq",
+ "commit": "a420df7d5e2ba5c83faf8bdaf238a1711b6e9aa3",
+ "axioms": ["Classical.choice", "Quot.sound", "propext"]}
