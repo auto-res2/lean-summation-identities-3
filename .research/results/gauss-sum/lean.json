@@ -1,0 +1,11 @@
+{"warnings": [],
+ "toolchain": "leanprover/lean4:v4.33.1",
+ "statement_matches": true,
+ "statement": "∀ (n : ℕ), 2 * ∑ i ∈ Finset.range (n + 1), i = n * (n + 1)",
+ "module": "Airas.GaussSum",
+ "mode": "full",
+ "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+ "errors": [],
+ "decl": "gauss_sum_mul_two",
+ "commit": "a420df7d5e2ba5c83faf8bdaf238a1711b6e9aa3",
+ "axioms": ["Classical.choice", "Quot.sound", "propext"]}
