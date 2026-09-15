@@ -30,11 +30,27 @@
                     "module": "Airas.GaussSum",
                     "decl": "gauss_sum_mul_two",
                     "statement": "(n : Nat) → 2 * (Finset.sum (Finset.range (n + 1)) fun i => i) = n * (n + 1)"
-                  }
+                  },
+                  "results": [
+                    {
+                      "commit": "a420df7d5e2ba5c83faf8bdaf238a1711b6e9aa3",
+                      "toolchain": "leanprover/lean4:v4.33.1",
+                      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+                      "statement": "∀ (n : ℕ), 2 * ∑ i ∈ Finset.range (n + 1), i = n * (n + 1)",
+                      "statement_matches": true,
+                      "axioms": [
+                        "Classical.choice",
+                        "Quot.sound",
+                        "propext"
+                      ]
+                    }
+                  ]
                 }
               ]
             }
-          ]
+          ],
+          "verified": true,
+          "verdict": "supported"
         },
         {
           "id": "c2",
@@ -57,11 +73,27 @@
                     "module": "Airas.OddSum",
                     "decl": "odd_sum_eq_sq",
                     "statement": "∀ n : ℕ, ∑ i ∈ Finset.range n, (2 * i + 1) = n ^ 2"
-                  }
+                  },
+                  "results": [
+                    {
+                      "commit": "a420df7d5e2ba5c83faf8bdaf238a1711b6e9aa3",
+                      "toolchain": "leanprover/lean4:v4.33.1",
+                      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+                      "statement": "∀ (n : ℕ), ∑ i ∈ Finset.range n, (2 * i + 1) = n ^ 2",
+                      "statement_matches": true,
+                      "axioms": [
+                        "Classical.choice",
+                        "Quot.sound",
+                        "propext"
+                      ]
+                    }
+                  ]
                 }
               ]
             }
-          ]
+          ],
+          "verified": true,
+          "verdict": "supported"
         }
       ],
       "notes": [
